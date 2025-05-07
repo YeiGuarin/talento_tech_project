@@ -1,0 +1,351 @@
+:root {
+    --primary-color: rgb(248, 245, 235);
+    --secondary-color: rgb(212, 153, 76);
+    --third-color: rgb(163, 117, 47);
+    --text-color: rgb(14, 12, 4);
+    --secondary-text-color: rgb(14, 12, 2);
+
+    --primary-dark: rgb(85, 66, 14);
+    --secondary-dark: rgb(4, 21, 36);
+    --third-dark: rgb(81, 93, 104);
+    --text-dark: rgb(149, 149, 156);
+    --secondary-text-dark: rgb(29, 42, 49);
+
+    --font-main: Arial, sans-serif;
+    --bg-light: #f1f1f1;
+}
+
+/* MODO OSCURO */
+body.dark-theme {
+    background-color: var(--primary-dark);
+    color: var(--text-dark);
+}
+
+body.dark-theme header,
+body.dark-theme aside#windFacts,
+body.dark-theme footer {
+    background-color: var(--secondary-dark);
+    color: var(--secondary-dark);    
+}
+
+body.dark-theme .content-section {
+    background-color: var(--secondary-dark);
+    color: var(--text-dark);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+body.dark-theme main#principal{
+    background-color: var(--third-dark);
+}
+
+body.dark-theme aside article {
+    background-color: var(--third-dark);
+    color: var(--secondary-text-dark);
+}
+
+div.container.dark-theme {
+    background-color: var(--secondary-dark);
+}
+
+/* ESTILOS GENERALES */
+body {
+    font-family: var(--font-main);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+    margin: 20px 0;
+}
+
+main#principal {
+    flex: 1;
+    background: var(--secondary-color);
+    padding: 20px;
+}
+
+/* HEADER ORGANIZADO */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+    padding: 0 40px;
+    background-color: var(--third-color);
+    color: var(--primary-color);
+}
+
+.logo-container img {
+    width: 120px;
+    height: auto;
+}
+
+.nav-container {
+    flex: 1;
+    text-align: center;
+}
+
+.nav-container h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+.content-section {
+    padding: 20px;
+    margin: 20px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+#definition {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#definition img {
+    width: 400px;
+    height: 230px;
+}
+
+aside#windFacts {
+    width: 20%;
+    background-color: var(--third-color);
+    padding: 15px;
+}
+
+aside#windFacts div h2 {
+    color: var(--bg-light);
+    text-align: center;
+    padding: 10px;
+    background-color: var(--primary-dark);
+}
+
+aside#windFacts img {
+    width: 280px;
+    height: 220px;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
+}
+
+aside#windFacts article p {
+    color: var(--bg-light);
+    text-align: justify;
+    padding: 0 5%;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+button {
+    background-color: var(--secondary-text-color);
+    color: var(--primary-color);
+    padding: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+}
+
+.content-section:hover {
+    transform: scale(1.03) translateY(-5px);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
+    z-index: 5;
+}
+
+/* Asegura que #definition conserve su fondo, tamaño y distribución */
+#definition {
+    perspective: 1000px;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+    background-color: var(--primary-color); /* Asegura fondo blanco */
+    border-radius: 10px;
+}
+
+/* Flip card ocupa todo el ancho y alto disponibles */
+.flip-card {
+    width: 100%;
+    position: relative;
+}
+
+.flip-card-inner {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    min-height: 230px;
+}
+
+.flip-card-front,
+.flip-card-back {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color); /* fondo blanco en ambas caras */
+    border-radius: 10px;
+    min-height: 230px;
+}
+
+.flip-card-front {
+    z-index: 2;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+#definition.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card img {
+    width: 230px;
+    height: 230px;
+}
+
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .logo-container {
+    margin-bottom: 10px;
+  }
+
+  .nav-container h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  aside#windFacts {
+    width: 100%;
+    order: 2;
+  }
+
+  main#principal {
+    order: 1;
+  }
+
+  aside#windFacts img {
+    width: 100%;
+    height: auto;
+  }
+
+  .content-section {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #definition {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flip-card {
+    width: 100%;
+  }
+
+  .flip-card-inner {
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    min-height: auto;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .flip-card img {
+    width: 80%;
+    height: auto;
+  }
+
+  .flip-card-front p,
+  .flip-card-back p {
+    padding: 10px;
+    text-align: justify;
+  }
+}
