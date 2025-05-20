@@ -1,11 +1,12 @@
+/* Root variables: define colors and fonts for both light and dark themes */
 :root {
-    --primary-color: rgb(248, 245, 235);
-    --secondary-color: rgb(212, 153, 76);
-    --third-color: rgb(163, 117, 47);
-    --text-color: rgb(14, 12, 4);
-    --secondary-text-color: rgb(14, 12, 2);
+    --primary-color: rgb(227, 242, 245);
+    --secondary-color: rgb(65, 115, 153);
+    --third-color: rgb(37, 55, 73);
+    --text-color: rgb(6, 29, 56);
+    --secondary-text-color: black;
 
-    --primary-dark: rgb(85, 66, 14);
+    --primary-dark: rgb(32, 55, 73);
     --secondary-dark: rgb(4, 21, 36);
     --third-dark: rgb(81, 93, 104);
     --text-dark: rgb(149, 149, 156);
@@ -15,7 +16,12 @@
     --bg-light: #f1f1f1;
 }
 
-/* MODO OSCURO */
+/* Text alignment for paragraphs and list items */
+p, li {
+  text-align: justify;
+}
+
+/* Dark theme styles for main elements */
 body.dark-theme {
     background-color: var(--primary-dark);
     color: var(--text-dark);
@@ -33,13 +39,14 @@ body.dark-theme .content-section {
     color: var(--text-dark);
 }
 
+/* Make all images responsive */
 img {
     max-width: 100%;
     height: auto;
 }
 
-
-body.dark-theme main#principal{
+/* Dark theme for main content and side articles */
+body.dark-theme main#principal {
     background-color: var(--third-dark);
 }
 
@@ -52,7 +59,7 @@ div.container.dark-theme {
     background-color: var(--secondary-dark);
 }
 
-/* ESTILOS GENERALES */
+/* General layout and font styles */
 body {
     font-family: var(--font-main);
     background-color: var(--primary-color);
@@ -64,19 +71,21 @@ body {
     min-height: 100vh;
 }
 
+/* Flex container layout */
 .container {
     display: flex;
     flex: 1;
     margin: 20px 0;
 }
 
+/* Main content area styling */
 main#principal {
     flex: 1;
     background: var(--secondary-color);
     padding: 20px;
 }
 
-/* HEADER ORGANIZADO */
+/* Header layout and color */
 header {
     display: flex;
     align-items: center;
@@ -87,11 +96,13 @@ header {
     color: var(--primary-color);
 }
 
+/* Logo image size */
 .logo-container img {
     width: 120px;
     height: auto;
 }
 
+/* Navigation section */
 .nav-container {
     flex: 1;
     text-align: center;
@@ -102,6 +113,7 @@ header {
     font-size: 2rem;
 }
 
+/* Navigation list */
 nav ul {
     list-style: none;
     padding: 10px 0;
@@ -113,6 +125,7 @@ nav ul li {
     margin: 0 15px;
 }
 
+/* Navigation links */
 nav ul li a {
     color: var(--primary-color);
     text-decoration: none;
@@ -122,6 +135,7 @@ nav a:hover {
     color: var(--secondary-color);
 }
 
+/* Content section style */
 .content-section {
     padding: 20px;
     margin: 20px;
@@ -129,6 +143,7 @@ nav a:hover {
     border-radius: 10px;
 }
 
+/* Section for definitions with image */
 #definition {
     display: flex;
     align-items: center;
@@ -140,6 +155,7 @@ nav a:hover {
     height: 230px;
 }
 
+/* Sidebar styles */
 aside#windFacts {
     width: 20%;
     background-color: var(--third-color);
@@ -167,6 +183,7 @@ aside#windFacts article p {
     padding: 0 5%;
 }
 
+/* Footer style */
 footer {
     text-align: center;
     padding: 10px;
@@ -174,6 +191,7 @@ footer {
     color: white;
 }
 
+/* Button design */
 button {
     background-color: var(--secondary-text-color);
     color: var(--primary-color);
@@ -191,24 +209,25 @@ button:hover {
     transition: 0.5s;
 }
 
+/* Hover effect for content sections */
 .content-section:hover {
     transform: scale(1.03) translateY(-5px);
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
     z-index: 5;
 }
 
-/* Asegura que #definition conserve su fondo, tamaño y distribución */
+/* Flip card styles */
 #definition {
     perspective: 1000px;
     cursor: pointer;
     justify-content: center;
     display: flex;
     padding: 20px;
-    background-color: var(--primary-color); /* Asegura fondo blanco */
+    background-color: var(--primary-color);
     border-radius: 10px;
 }
 
-/* Flip card ocupa todo el ancho y alto disponibles */
+/* Flip card container */
 .flip-card {
     width: 100%;
     position: relative;
@@ -226,6 +245,7 @@ button:hover {
     min-height: 230px;
 }
 
+/* Front and back of the flip card */
 .flip-card-front,
 .flip-card-back {
     display: flex;
@@ -239,7 +259,7 @@ button:hover {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--primary-color); /* fondo blanco en ambas caras */
+    background-color: var(--primary-color);
     border-radius: 10px;
     min-height: 230px;
 }
@@ -262,6 +282,7 @@ button:hover {
     height: 230px;
 }
 
+/* Responsive layout for tablets */
 @media (max-width: 1024px) {
   header {
     flex-direction: column;
@@ -313,6 +334,7 @@ button:hover {
   }
 }
 
+/* Responsive layout for mobile devices */
 @media (max-width: 768px) {
   #definition {
     flex-direction: column;
@@ -348,4 +370,114 @@ button:hover {
     padding: 10px;
     text-align: justify;
   }
+
+  .chart-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .chart-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+}
+
+/* Dark theme for flip cards */
+body.dark-theme .flip-card-front,
+body.dark-theme .flip-card-back {
+    background-color: var(--third-dark);
+    color: var(--text-dark);
+}
+
+body.dark-theme #definition {
+    background-color: var(--secondary-dark);
+}
+
+body.dark-theme .flip-card-front p,
+body.dark-theme .flip-card-back h1 {
+    color: var(--text-dark);
+}
+
+.flip-card-front p,
+.flip-card-back h1 {
+    background-color: transparent;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Interactive chart section */
+#interactive-charts {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    text-align: center;
+}
+
+#interactive-charts h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.chart-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.chart-buttons button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    background-color: #3a73b4;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chart-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.chart-display {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#noChartMsg {
+    color: #666;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* Dark theme for chart section */
+body.dark-theme #interactive-charts {
+    background-color: var(--secondary-dark);
+    color: var(--text-dark);
+}
+
+body.dark-theme #interactive-charts h2 {
+    color: var(--text-dark);
+}
+
+body.dark-theme .chart-display {
+    background-color: var(--third-dark);
+    color: var(--text-dark);
+}
+
+body.dark-theme #noChartMsg {
+    color: var(--text-dark);
 }

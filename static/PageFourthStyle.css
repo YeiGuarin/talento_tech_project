@@ -1,3 +1,5 @@
+/* === ROOT VARIABLES === */
+/* Define reusable color and font variables for consistent theming */
 :root {
     --primary-color: rgb(225, 238, 221);
     --secondary-color: rgb(105, 143, 100);
@@ -15,7 +17,12 @@
     --bg-light: #f1f1f1;
 }
 
-/* MODO OSCURO */
+/* Paragraphs and list items justified for better text alignment */
+p,li {
+  text-align: justify;
+}
+
+/* === DARK MODE STYLES === */
 body.dark-theme {
     background-color: var(--primary-dark);
     color: var(--text-dark);
@@ -33,12 +40,7 @@ body.dark-theme .content-section {
     color: var(--text-dark);
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-body.dark-theme main#principal{
+body.dark-theme main#principal {
     background-color: var(--third-dark);
 }
 
@@ -51,7 +53,7 @@ div.container.dark-theme {
     background-color: var(--secondary-dark);
 }
 
-/* ESTILOS GENERALES */
+/* === GENERAL PAGE LAYOUT === */
 body {
     font-family: var(--font-main);
     background-color: var(--primary-color);
@@ -75,7 +77,7 @@ main#principal {
     padding: 20px;
 }
 
-/* HEADER ORGANIZADO */
+/* === HEADER STYLES === */
 header {
     display: flex;
     align-items: center;
@@ -121,6 +123,7 @@ nav a:hover {
     color: var(--secondary-color);
 }
 
+/* === CONTENT SECTIONS === */
 .content-section {
     padding: 20px;
     margin: 20px;
@@ -128,6 +131,7 @@ nav a:hover {
     border-radius: 10px;
 }
 
+/* Definition block with image and text */
 #definition {
     display: flex;
     align-items: center;
@@ -139,6 +143,7 @@ nav a:hover {
     height: 230px;
 }
 
+/* === SIDEBAR (ASIDE) STYLES === */
 aside#windFacts {
     width: 20%;
     background-color: var(--third-color);
@@ -166,6 +171,7 @@ aside#windFacts article p {
     padding: 0 5%;
 }
 
+/* === FOOTER === */
 footer {
     text-align: center;
     padding: 10px;
@@ -173,6 +179,7 @@ footer {
     color: white;
 }
 
+/* === BUTTON STYLES === */
 button {
     background-color: var(--secondary-text-color);
     color: var(--primary-color);
@@ -190,24 +197,24 @@ button:hover {
     transition: 0.5s;
 }
 
+/* Hover effect for content cards */
 .content-section:hover {
     transform: scale(1.03) translateY(-5px);
     box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
     z-index: 5;
 }
 
-/* Asegura que #definition conserve su fondo, tamaño y distribución */
+/* === FLIP CARD LAYOUT (for interactive info sections) === */
 #definition {
     perspective: 1000px;
     cursor: pointer;
     justify-content: center;
     display: flex;
     padding: 20px;
-    background-color: var(--primary-color); /* Asegura fondo blanco */
+    background-color: var(--primary-color);
     border-radius: 10px;
 }
 
-/* Flip card ocupa todo el ancho y alto disponibles */
 .flip-card {
     width: 100%;
     position: relative;
@@ -238,7 +245,7 @@ button:hover {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--primary-color); /* fondo blanco en ambas caras */
+    background-color: var(--primary-color);
     border-radius: 10px;
     min-height: 230px;
 }
@@ -261,6 +268,13 @@ button:hover {
     height: 230px;
 }
 
+/* Make all images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* === RESPONSIVE DESIGN FOR TABLETS AND PHONES === */
 @media (max-width: 1024px) {
     header {
       flex-direction: column;
@@ -268,67 +282,67 @@ button:hover {
       padding: 20px;
       text-align: center;
     }
-  
+
     .logo-container {
       margin-bottom: 10px;
     }
-  
+
     .nav-container h1 {
       font-size: 1.5rem;
     }
-  
+
     nav ul {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 0;
     }
-  
+
     nav ul li {
       margin: 10px;
     }
-  
+
     .container {
       flex-direction: column;
       padding: 10px;
     }
-  
+
     aside#windFacts {
       width: 100%;
       order: 2;
     }
-  
+
     main#principal {
       order: 1;
     }
-  
+
     aside#windFacts img {
       width: 100%;
       height: auto;
     }
-  
+
     .content-section {
       margin: 10px;
     }
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     #definition {
       flex-direction: column;
       align-items: center;
     }
-  
+
     .flip-card {
       width: 100%;
     }
-  
+
     .flip-card-inner {
       flex-direction: column;
       gap: 15px;
       position: relative;
       min-height: auto;
     }
-  
+
     .flip-card-front,
     .flip-card-back {
       flex-direction: column;
@@ -336,16 +350,106 @@ button:hover {
       width: 100%;
       height: auto;
     }
-  
+
     .flip-card img {
       width: 80%;
       height: auto;
     }
-  
+
     .flip-card-front p,
     .flip-card-back p {
       padding: 10px;
       text-align: justify;
     }
-  }
-  
+}
+
+/* Flip card styles in dark mode */
+body.dark-theme .flip-card-front,
+body.dark-theme .flip-card-back {
+    background-color: var(--third-dark);
+    color: var(--text-dark);
+}
+
+body.dark-theme #definition {
+    background-color: var(--secondary-dark);
+}
+
+.flip-card-front p,
+.flip-card-back h1 {
+    background-color: transparent;
+    margin: 0;
+    padding: 10px;
+}
+
+/* === INTERACTIVE CHART SECTION === */
+#interactive-charts {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Chart title styling */
+#interactive-charts h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Container for chart buttons */
+.chart-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+/* Individual chart buttons */
+.chart-buttons button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    background-color: #3a73b4;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chart-buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Container for displaying charts */
+.chart-display {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#noChartMsg {
+    color: #666;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* Dark mode styles for chart section */
+body.dark-theme #interactive-charts {
+    background-color: var(--secondary-dark);
+}
+
+body.dark-theme #interactive-charts h2 {
+    color: var(--text-dark);
+}
+
+body.dark-theme .chart-display {
+    background-color: var(--third-dark);
+    color: var(--text-dark);
+}
+
+body.dark-theme #noChartMsg {
+    color: var(--text-dark);
+}
