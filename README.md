@@ -7,7 +7,7 @@ This Flask-based web application allows users to visualize data related to diffe
 - 🔍 Filtered data to include only countries (excludes regions, economic groups, etc.)
 - 📊 Visualizations in bar, line, pie, and scatter formats
 - 📁 Individual pages for Wind, Solar, and Green Hydrogen energy types
-- 🇨🇴 Colombia is always displayed regardless of ranking
+- Colombia is always displayed regardless of ranking
 - 📝 Save user-submitted form data to a CSV file
 
 ## 🚀 Technologies Used
