@@ -1,6 +1,6 @@
 # 🌍 Energy Type Visualization Web App
 
-This Flask-based web application allows users to visualize data related to different types of renewable energy—currently wind and solar energy. The app displays charts (bar, pie, line, scatter) showing the top energy-producing countries, ensuring Colombia is always included for reference.
+This Flask-based web application allows users to visualize data related to different types of renewable energy, currently wind and solar energy. The app displays charts (bar, pie, line, scatter) showing the top energy-producing countries, ensuring Colombia is always included for reference.
 
 ## 📌 Features
 
